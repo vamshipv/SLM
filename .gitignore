@@ -1,0 +1,5 @@
+cd /workspaces/sarcasm-finder
+echo "*.pt" >> .gitignore
+echo "*.pth" >> .gitignore
+git add .gitignore
+git commit -m "Add .pt and .pth files to gitignore"
