@@ -61,8 +61,8 @@ model = LlamaForCausalLM(config)
 
 # 4. TRAINING ARGUMENTS
 training_args = TrainingArguments(
-    output_dir="./baby-llama-v3-balanced-3Ep",
-    num_train_epochs=4, 
+    output_dir="./baby-llama-v3-balanced",
+    num_train_epochs=10, 
     per_device_train_batch_size=8,
     gradient_accumulation_steps=4, 
     learning_rate=6e-4, # A solid "middle ground" rate
@@ -86,6 +86,3 @@ trainer = Trainer(
 print(f"\nModel Parameters: {sum(p.numel() for p in model.parameters()):,}")
 print("Starting the Balanced 70/30 Training...")
 trainer.train()
-
-# This model is much better at logical answers and code generation, but still not enough.
-# Dataset quality is not up to the task, because using a 19M model needs a very clean and focused dataset to achieve good reuslts.

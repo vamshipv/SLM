@@ -2,11 +2,11 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 print("1. Waking up the Frankenstein Model...")
-save_directory = "./qwen-medical-frankenstein"
+model_directory = "./qwen-medical-frankenstein"
 
 # We load from your local folder, NOT from the Hugging Face cloud
-tokenizer = AutoTokenizer.from_pretrained(save_directory)
-model = AutoModelForCausalLM.from_pretrained(save_directory)
+tokenizer = AutoTokenizer.from_pretrained(model_directory)
+model = AutoModelForCausalLM.from_pretrained(model_directory)
 
 print("Model loaded successfully! Type 'quit' to exit.")
 print("-" * 50)
